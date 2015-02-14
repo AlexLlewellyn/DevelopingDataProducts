@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chick Weight</title>
+  <title>Developing Data Products Project</title>
   <meta charset="utf-8">
-  <meta name="description" content="Chick Weight">
+  <meta name="description" content="Developing Data Products Project">
   <meta name="author" content="">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,8 +32,8 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Chick Weight</h1>
-    <h2>Comparison of Chick Weights by Diet</h2>
+    <h1>Developing Data Products Project</h1>
+    <h2>An interactive tool for the comparison of weights versus age of chicks on different diets</h2>
     <p><br/></p>
   </hgroup>
   <article></article>  
@@ -43,14 +43,23 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Slide 1</h2>
+    <h2>Application Description</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ol>
+    <p>The application allows the user to explore the effects of diet on early growth of chicks. </p>
+
+<p>Utilizing the app users are able to:</p>
+
+<ul>
+<li> select the format in which to view the results, either a line or trellis graph</li>
+<li> select whether to view an overview of all four diets or view detailed data for each diet</li>
+<li> view the data either graphically via the plot tab or in summary format
+  on the summary tab</li>
+</ul>
+
+<p>The app can be found here <a href="https://basel.shinyapps.io/ChickWeight/"> <a href="https://basel.shinyapps.io/ChickWeight/">https://basel.shinyapps.io/ChickWeight/</a></a></p>
+
+<p>The code files are on github. <a href="https://github.com/AlexLlewellyn/DevelopingDataProducts"> <a href="https://github.com/AlexLlewellyn/DevelopingDataProducts">https://github.com/AlexLlewellyn/DevelopingDataProducts</a> </a></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -58,27 +67,76 @@
 
 <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>The Data</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p>The data for this application is the ChickWeight dataset taken from the dataset package in R. This data was taken from an experiment on the effect of diet on early growth of chicks.</p>
+
+<p>The body weights of the chicks were measured at birth and every second day thereafter until day 20. They were also measured on day 21. There were four groups on chicks on different protein diets.</p>
+
+<p>Here is an example of the raw data</p>
+
+<pre><code class="r">head(ChickWeight)
+</code></pre>
+
+<pre><code>##   weight Time Chick Diet
+## 1     42    0     1    1
+## 2     51    2     1    1
+## 3     59    4     1    1
+## 4     64    6     1    1
+## 5     76    8     1    1
+## 6     93   10     1    1
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>Slide 3</h2>
+    <h2>Data Structure</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p>The ChickWeight data frame has 578 rows and 4 columns</p>
+
+<p>It has 4 variables</p>
+
+<ul>
+<li>weight
+
+<ul>
+<li> a numeric vector giving the body weight of the chick (gm).</li>
+</ul></li>
+<li>Time 
+
+<ul>
+<li>a numeric vector giving the number of days since birth when the measurement was made.</li>
+</ul></li>
+<li>Chick
+
+<ul>
+<li>an ordered factor with levels 18 &lt; ... &lt; 48 giving a unique identifier for the chick. The ordering of the levels groups chicks on the same diet together and orders them according to their final weight (lightest to heaviest) within diet.</li>
+</ul></li>
+<li>Diet
+
+<ul>
+<li>a factor with levels 1, ..., 4 indicating which experimental diet the chick received.</li>
+</ul></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>The graphs</h2>
+  </hgroup>
   <article data-timings="">
-    
+    <p>The graphs were constructed using ggplot. Here is the resulting line graph for all diets.</p>
+
+<p><img src="figure/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"> </p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -89,25 +147,25 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Slide 1'>
+        data-slide=1 title='Application Description'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='The Data'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Slide 3'>
+        data-slide=3 title='Data Structure'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title=''>
+        data-slide=4 title='The graphs'>
          4
       </a>
     </li>
